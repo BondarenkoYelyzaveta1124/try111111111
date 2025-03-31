@@ -43,7 +43,7 @@ namespace ConsoleApp10
                     case 4:
                         Console.WriteLine("\nОберіть завдання студента:");
                         Console.WriteLine("1. Вольвач Анастасія - варіант 7");
-                        Console.WriteLine("2. Риженкова Ольга - варіант X");
+                        Console.WriteLine("2. Риженкова Ольга - варіант 11");// додала номер свого варіанту
                         Console.WriteLine("3. Бондаренко Єлизавета - варіант Y");
 
                         int studentChoice = int.Parse(Console.ReadLine());
