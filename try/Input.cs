@@ -1,38 +1,36 @@
-﻿using System;
+﻿    using System;
 
-namespace ConsoleApp10
-{
-    public static class ArrayHelper
+    namespace ConsoleApp10
     {
-        private static int[] array; // Масив для ручного введення
-
-        public static void InputArray()
+        public static class ArrayHelper
         {
-            Console.WriteLine("Введіть елементи масиву через пробіл:");
-            string input = Console.ReadLine();
-            array = ParseArray(input);
-            Console.WriteLine("Масив успішно збережений!");
-        }
+            private static int[] array; 
+            public static void InputArray()
+            {
+                Console.WriteLine("Введіть елементи масиву через пробіл:");
+                string input = Console.ReadLine();
+                array = ParseArray(input);
+                Console.WriteLine("Масив успішно збережений!");
+            }
 
-        public static int[] GetArray()
-        {
-            return array ?? new int[0]; // Якщо масив не ініціалізовано, повертаємо порожній
-        }
+            public static int[] GetArray()
+            {
+                return array ?? new int[0]; 
+            }
 
+            private static int[] ParseArray(string input)
+            {
+                string[] parts = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                int[] arr = new int[parts.Length];
+                for (int i = 0; i < parts.Length; i++)
+                {
+                    arr[i] = int.Parse(parts[i]);
+                }
+                return arr;
+            }
         public static void ClearArray()
         {
-            array = new int[0]; // Очищаємо масив
-        }
-
-        private static int[] ParseArray(string input)
-        {
-            string[] parts = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            int[] arr = new int[parts.Length];
-            for (int i = 0; i < parts.Length; i++)
-            {
-                arr[i] = int.Parse(parts[i]);
-            }
-            return arr;
+            array = null; 
         }
     }
-}
+    }

@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Threading.Tasks.Dataflow;
 
 namespace ConsoleApp10
 {
     public static class ArrayRandom
     {
-        private static int[] arrayRandom; // Масив випадкових чисел
+        private static int[] arrayRandom;
 
         public static void InputArrayRandom()
         {
@@ -18,21 +17,22 @@ namespace ConsoleApp10
             {
                 arr[i] = rand.Next(-1000000, 1000000);
             }
-
-            arrayRandom = arr;
-            Console.WriteLine("Згенерований масив: " + string.Join(" ", arr));
             Console.WriteLine("Масив успішно збережений!");
+            arrayRandom = arr;
 
+            Console.Write("Згенерований масив: ");
+            foreach (var num in arr)
+            {
+                Console.Write(num + " ");
+            }
         }
-
         public static int[] GetArrayRandom()
         {
-            return arrayRandom ?? new int[0]; // Якщо масив ще не задано, повертаємо порожній
+            return arrayRandom ?? new int[0];
         }
-
-        public static void ClearArray()
+        public static void ClearArrayRandom()
         {
-            arrayRandom = new int[0]; // Очищаємо масив
+            arrayRandom = null; 
         }
     }
 }

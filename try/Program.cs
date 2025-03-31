@@ -37,7 +37,8 @@ namespace ConsoleApp10
 
                     case 3:
                         Console.WriteLine("Видалення записаних даних масиву");
-                        ArrayClear.ClearAll();
+                        ArrayHelper.ClearArray();
+                        ArrayRandom.ClearArrayRandom();
                         break;
 
                     case 4:

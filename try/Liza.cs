@@ -6,7 +6,7 @@ namespace ConsoleApp10
     {
         public static void firstBlockBond(bool isRandom) // Додаємо параметр для перевірки джерела масиву
         {
-            int[] array = isRandom ? ArrayRandom.GetArrayRandom() : ArrayHelper.GetArray(); // Вибір масиву
+            int[] array = isRandom ? ArrayRandom.GetArrayRandom() : ArrayHelper.GetArray(); 
 
             if (array.Length == 0)
             {
