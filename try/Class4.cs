@@ -1,57 +1,38 @@
 ﻿using System;
 
-public class FillArray
+namespace ConsoleApp10
 {
-    private static int[] array;
-
-    public static void SetArray(int[] newArray)
+    public static class ArrayHelper
     {
-        array = newArray;
-    }
+        private static int[] array; // Масив для ручного введення
 
-    public static int[] GetArray()
-    {
-        return array;
-    }
-
-    public static void PrintArray()
-    {
-        if (array == null)
+        public static void InputArray()
         {
-            Console.WriteLine("Массив не задан!");
-            return;
+            Console.WriteLine("Введіть елементи масиву через пробіл:");
+            string input = Console.ReadLine();
+            array = ParseArray(input);
+            Console.WriteLine("Масив успішно збережений!");
         }
 
-        Console.WriteLine("Текущий массив: " + string.Join(", ", array));
-    }
-
-
-    public static void InputArray()
-    {
-        Console.Write("Введите размер массива: ");
-        int size = int.Parse(Console.ReadLine());
-        int[] array = new int[size];
-
-        Console.WriteLine("Введите элементы массива:");
-        for (int i = 0; i < size; i++)
+        public static int[] GetArray()
         {
-            array[i] = int.Parse(Console.ReadLine());
+            return array ?? new int[0]; // Якщо масив не ініціалізовано, повертаємо порожній
         }
 
-        SetArray(array);
-        Console.WriteLine("Массив сохранён!");
-    }
-
-    public static void ProcessArray()
-    {
-        int[] array = GetArray();
-        if (array == null)
+        public static void ClearArray()
         {
-            Console.WriteLine("Массив не задан! Введите данные сначала.");
-            return;
+            array = new int[0]; // Очищаємо масив
         }
 
-        Console.WriteLine("Обработка массива...");
-        // Здесь можно что-то делать с массивом
+        private static int[] ParseArray(string input)
+        {
+            string[] parts = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            int[] arr = new int[parts.Length];
+            for (int i = 0; i < parts.Length; i++)
+            {
+                arr[i] = int.Parse(parts[i]);
+            }
+            return arr;
+        }
     }
 }

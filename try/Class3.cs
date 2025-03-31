@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//це 2 блок
 namespace ConsoleApp10
 {
     partial class Methods
