@@ -37,8 +37,8 @@ namespace ConsoleApp10
 
                     case 3:
                         Console.WriteLine("Видалення записаних даних масиву");
-                        ArrayHelper.ClearArray();
-                        ArrayRandom.ClearArrayRandom();
+                        ArrayHelper.ClearArrayRandom();
+                        ArrayRandom.ClearArray();
                         break;
 
                     case 4:
@@ -53,7 +53,7 @@ namespace ConsoleApp10
                         {
                             case 1:
                                 Console.WriteLine("Виконую завдання Вольвач Анастасії");
-                                Methods.firstBlock();
+                                Methods.firstBlockAV(isRandom);
                                 break;
 
                             case 2:

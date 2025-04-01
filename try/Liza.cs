@@ -8,12 +8,6 @@ namespace ConsoleApp10
         {
             int[] array = isRandom ? ArrayRandom.GetArrayRandom() : ArrayHelper.GetArray(); 
 
-            if (array.Length == 0)
-            {
-                Console.WriteLine("Масив порожній! Введіть дані спочатку.");
-                return;
-            }
-
             int newSize = array.Length / 2 + (array.Length % 2);
             int[] resultArray = new int[newSize];
             int index = 0;

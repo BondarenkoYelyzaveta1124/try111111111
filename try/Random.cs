@@ -5,7 +5,6 @@ namespace ConsoleApp10
     public static class ArrayRandom
     {
         private static int[] arrayRandom;
-
         public static void InputArrayRandom()
         {
             Console.Write("Введіть, скільки елементів згенерувати випадково: ");
@@ -15,7 +14,7 @@ namespace ConsoleApp10
             Random rand = new Random();
             for (int i = 0; i < size; i++)
             {
-                arr[i] = rand.Next(-1000000, 1000000);
+                arr[i] = rand.Next(-1000000, 1000000);// додати тут
             }
             Console.WriteLine("Масив успішно збережений!");
             arrayRandom = arr;
@@ -30,9 +29,9 @@ namespace ConsoleApp10
         {
             return arrayRandom ?? new int[0];
         }
-        public static void ClearArrayRandom()
+        public static void ClearArray()
         {
-            arrayRandom = null; 
+            arrayRandom = null;
         }
     }
 }

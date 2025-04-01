@@ -8,12 +8,6 @@ namespace ConsoleApp10
         {
             int[] array = isRandom ? ArrayRandom.GetArrayRandom() : ArrayHelper.GetArray(); // Отримуємо масив з `ArrayHelper`
 
-            if (array.Length == 0)
-            {
-                Console.WriteLine("Масив порожній! Введіть дані спочатку.");
-                return;
-            }
-
             (int min, int max) = MinMax(array);
             int[] newArr = NewArray(array, min, max);
 
